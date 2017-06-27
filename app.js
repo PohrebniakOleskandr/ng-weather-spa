@@ -63,5 +63,4 @@ weatherApp.controller('forecastController', ['$scope', '$resource', '$routeParam
         return new Date(date*1000);
     }
     
-    console.log($scope.weatherResult);
 }]); 
