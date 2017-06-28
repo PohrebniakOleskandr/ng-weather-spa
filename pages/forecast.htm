@@ -5,14 +5,12 @@ Next 3 hours periods: <a href="#/forecast/2" ng-class="{'bg-primary' : days === 
 <div ng-repeat="w in weatherResult.list">
     <div class="row">
         <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">{{convertToDate(w.dt) | date: 'dd-M-yyyy H:mm'}}</h3>
-                </div>               
-                <div class="panel-body">
-                    Daytime temperature: {{convertToCelsius(w.main.temp)}}
-                </div>
-            </div> 
+            <weather-report 
+                            weather-day="w" 
+                            convert-to-standart="convertToCelsius(deg)"
+                            convert-to-date="convertToDate(dt)"
+                            date-format="dd-M-yyyy H:mm">
+            </weather-report>
         </div>
     </div>
 </div> 
